@@ -15,6 +15,6 @@ public class TC_0001 {
     @DisplayName("TC-0001 - Login functionality")
     public void loginToFrontendApp() {
 
-        iFactory.getFrontendUserBlock().login();
+        iFactory.getFrontendUserModule().login();
     }
 }

@@ -26,11 +26,9 @@ public class AccountPage {
     private static String stateXpath = "//form[@id='profilefrm']//input[@name='state']";
     private static String zipCodeXpath = "//form[@id='profilefrm']//input[@name='zip']";
     private static String selectCountryXpath = "//form[@id='profilefrm']//a[@class='chosen-single']";
-   private static String typeCountryXpath = "//form[@id='profilefrm']//input[@class='chosen-search-input']";
+    private static String typeCountryXpath = "//form[@id='profilefrm']//input[@class='chosen-search-input']";
     /*
-    $x("//form[@id='profilefrm']//a[@class='chosen-single']").click();
-$x("//form[@id='profilefrm']//input[@class='chosen-search-input']").sendKeys("United States");
-$x("//form[@id='profilefrm']//input[@class='chosen-search-input']").pressEnter();
+     * $x("//form[@id='profilefrm']//a[@class='chosen-single']").click(); $x("//form[@id='profilefrm']//input[@class='chosen-search-input']").sendKeys("United States"); $x("//form[@id='profilefrm']//input[@class='chosen-search-input']").pressEnter();
      */
     // private final String COUNTRY = "country";
     private static String phoneXpath = "//form[@id='profilefrm']//input[@name='phone']";
@@ -77,7 +75,10 @@ $x("//form[@id='profilefrm']//input[@class='chosen-search-input']").pressEnter()
         }
         if (products.getProfile().getCountry() != null) {
             sleep(1000);
-            $x(selectCountryXpath).selectOption(products.getProfile().getCountry());
+            $x(selectCountryXpath).click();
+            sleep(500);
+            $x(typeCountryXpath).sendKeys(products.getProfile().getCountry());
+            $x(typeCountryXpath).pressEnter();
         }
         if (products.getProfile().getPhone() != null) {
             sleep(1000);
@@ -96,17 +97,17 @@ $x("//form[@id='profilefrm']//input[@class='chosen-search-input']").pressEnter()
     public Profile verifyUpdates() {
         Profile updatedProfile = new Profile();
         sleep(500);
-        updatedProfile.setEmail(StringUtils.normalizeSpace($x(emailXpath).getText()));
+        updatedProfile.setEmail(StringUtils.normalizeSpace($x(emailXpath).getValue()));
         sleep(500);
-        updatedProfile.setAddress(StringUtils.normalizeSpace($x(addressXpath).getText()));
+        updatedProfile.setAddress(StringUtils.normalizeSpace($x(addressXpath).getValue()));
         sleep(500);
-        updatedProfile.setAddress2(StringUtils.normalizeSpace($x(address2Xpath).getText()));
+        updatedProfile.setAddress2(StringUtils.normalizeSpace($x(address2Xpath).getValue()));
         sleep(500);
-        updatedProfile.setState(StringUtils.normalizeSpace($x(stateXpath).getText()));
+        updatedProfile.setState(StringUtils.normalizeSpace($x(stateXpath).getValue()));
         sleep(500);
-        updatedProfile.setZipCode(StringUtils.normalizeSpace($x(zipCodeXpath).getText()));
+        updatedProfile.setZipCode(StringUtils.normalizeSpace($x(zipCodeXpath).getValue()));
         sleep(500);
-        updatedProfile.setPhone(StringUtils.normalizeSpace($x(phoneXpath).getText()));
+        updatedProfile.setPhone(StringUtils.normalizeSpace($x(phoneXpath).getValue()));
         sleep(500);
         return updatedProfile;
     }

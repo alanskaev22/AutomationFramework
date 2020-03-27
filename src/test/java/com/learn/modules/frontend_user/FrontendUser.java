@@ -40,7 +40,7 @@ public class FrontendUser implements IFrontendUser, Logging {
     public IFrontendUser verifyProfileDetailsUpdated(Products products) {
         Profile updatedProfile = accountPage.verifyUpdates();
         accountPage.clickOnMyProfile();
-        assertThat(products.getProfile().getEmail()).as("Verifying email was updated").isEqualToIgnoringWhitespace(updatedProfile.getEmail());
+        assertThat(products.getProfile().getEmail().toLowerCase()).as("Verifying email was updated").isEqualToIgnoringWhitespace(updatedProfile.getEmail().toLowerCase());
         assertThat(products.getProfile().getAddress()).as("Verifying address was updated").isEqualToIgnoringWhitespace(updatedProfile.getAddress());
         assertThat(products.getProfile().getAddress2()).as("Verifying address2 was updated").isEqualToIgnoringWhitespace(updatedProfile.getAddress2());
         assertThat(products.getProfile().getCity()).as("Verifying city was updated").isEqualToIgnoringWhitespace(updatedProfile.getCity());

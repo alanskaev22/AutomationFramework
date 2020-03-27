@@ -12,7 +12,7 @@ public class IFactory {
         this.iFrontendUser = new FrontendUser();
     }
 
-    public IFrontendUser getFrontendUserBlock() {
+    public IFrontendUser getFrontendUserModule() {
         return iFrontendUser;
     }
 }
