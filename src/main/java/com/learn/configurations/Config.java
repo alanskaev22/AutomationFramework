@@ -3,7 +3,6 @@ package com.learn.configurations;
 import com.learn.logger.Logging;
 import io.vavr.control.Try;
 
-
 import java.io.FileInputStream;
 import java.util.Map;
 import java.util.Properties;

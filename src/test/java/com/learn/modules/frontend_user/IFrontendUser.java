@@ -1,15 +1,15 @@
 package com.learn.modules.frontend_user;
 
 
-import com.learn.components.Products;
+import com.learn.components.*;
 
 public interface IFrontendUser {
 
-    public IFrontendUser login();
+    IFrontendUser login();
 
-    public IFrontendUser fillProfileDetails(Products products);
+    IFrontendUser fillProfileDetails(Products products);
 
-    public IFrontendUser submitProfileChanges();
+    IFrontendUser submitProfileChanges();
 
-    public IFrontendUser verifyProfileDetailsUpdated(Products products);
+    IFrontendUser verifyProfileDetailsUpdated(Products products);
 }

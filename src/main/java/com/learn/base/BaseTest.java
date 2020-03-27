@@ -15,11 +15,11 @@ import org.junit.jupiter.api.BeforeAll;
 import java.util.Properties;
 
 public class BaseTest implements Logging {
-private static Properties properties;
+    private static Properties properties;
 
     @BeforeAll
-    public static void setupAll(){
-    properties = Config.read();
+    public static void setupAll() {
+        properties = Config.read();
         WebDriverManager.chromedriver().version("79.0.3945.36");
         SelenideLogger.addListener("allure", new AllureSelenide());
         WebDriverRunner.addListener(new WebDriverListener());
@@ -30,12 +30,12 @@ private static Properties properties;
     }
 
     @AfterEach
-    public void tearDown(){
+    public void tearDown() {
         SelenideLogger.removeAllListeners();
     }
 
     @AfterAll
-    public static void tearDownAll(){
+    public static void tearDownAll() {
         WebDriverRunner.getWebDriver().close();
     }
 }

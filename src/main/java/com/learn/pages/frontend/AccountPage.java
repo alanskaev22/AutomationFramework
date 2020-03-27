@@ -25,10 +25,17 @@ public class AccountPage {
     private static String cityXpath = "//form[@id='profilefrm']//input[@name='city']";
     private static String stateXpath = "//form[@id='profilefrm']//input[@name='state']";
     private static String zipCodeXpath = "//form[@id='profilefrm']//input[@name='zip']";
-    private static String selectCountryXpath = "//form[@id='profilefrm']//select";
+    private static String selectCountryXpath = "//form[@id='profilefrm']//a[@class='chosen-single']";
+   private static String typeCountryXpath = "//form[@id='profilefrm']//input[@class='chosen-search-input']";
+    /*
+    $x("//form[@id='profilefrm']//a[@class='chosen-single']").click();
+$x("//form[@id='profilefrm']//input[@class='chosen-search-input']").sendKeys("United States");
+$x("//form[@id='profilefrm']//input[@class='chosen-search-input']").pressEnter();
+     */
     // private final String COUNTRY = "country";
     private static String phoneXpath = "//form[@id='profilefrm']//input[@name='phone']";
     private static String submitBtnXpath = "//button[contains(@class, 'updateprofile')]";
+
 
     @Step("Navigate to My Profile")
     public void clickOnMyProfile() {
