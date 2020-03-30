@@ -27,17 +27,13 @@ public class AccountPage {
     private static String zipCodeXpath = "//form[@id='profilefrm']//input[@name='zip']";
     private static String selectCountryXpath = "//form[@id='profilefrm']//a[@class='chosen-single']";
     private static String typeCountryXpath = "//form[@id='profilefrm']//input[@class='chosen-search-input']";
-    /*
-     * $x("//form[@id='profilefrm']//a[@class='chosen-single']").click(); $x("//form[@id='profilefrm']//input[@class='chosen-search-input']").sendKeys("United States"); $x("//form[@id='profilefrm']//input[@class='chosen-search-input']").pressEnter();
-     */
-    // private final String COUNTRY = "country";
     private static String phoneXpath = "//form[@id='profilefrm']//input[@name='phone']";
     private static String submitBtnXpath = "//button[contains(@class, 'updateprofile')]";
 
 
     @Step("Navigate to My Profile")
     public void clickOnMyProfile() {
-        $x(myProfileXpath).click();
+        $x(myProfileXpath).scrollIntoView("{behavior: \"smooth\", block: \"center\", inline: \"center\" }").click();
     }
 
     @Step("Fill product details")
@@ -90,11 +86,11 @@ public class AccountPage {
     @Step("Submit profile information to be updated")
     public void submitProfileDetailsForUpdate() {
         sleep(500);
-        $x(submitBtnXpath).click();
+        $x(submitBtnXpath).scrollIntoView("{behavior: \"smooth\", block: \"center\", inline: \"center\" }").click();
     }
 
     @Step("Verify profile details have been updated")
-    public Profile verifyUpdates() {
+    public Profile verifyProfileUpdates() {
         Profile updatedProfile = new Profile();
         sleep(500);
         updatedProfile.setEmail(StringUtils.normalizeSpace($x(emailXpath).getValue()));
