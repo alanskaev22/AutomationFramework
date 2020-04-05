@@ -28,7 +28,7 @@
 
 * Java 8 or higher
 
-* Lombok (enable annotation processor after installation: Preferences | Other Settings | Lombok plugin )
+* Lombok (Must install & enable annotation processor after installation: Preferences | Other Settings | Lombok plugin )
 
 
 ## Notes ##
