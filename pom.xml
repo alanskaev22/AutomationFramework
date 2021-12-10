@@ -28,7 +28,7 @@
     <allure.version>2.13.2</allure.version>
     <aspectj.version>1.9.5</aspectj.version>
     <assertj.core.version>3.13.2</assertj.core.version>
-    <log4j.version>2.12.1</log4j.version>
+    <log4j.version>2.15.0</log4j.version>
     <spotless-maven-plugin.version>1.28.0</spotless-maven-plugin.version>
   </properties>
 
